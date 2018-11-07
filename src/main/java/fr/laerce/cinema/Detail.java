@@ -39,7 +39,7 @@ public class Detail extends HttpServlet {
         out.println("<a>Nom du film : "+ film.note +"</a>");
         out.println("<br />");
         out.println("<br />");
-        out.println("<img src=affiche?id="+film.id+">");
+        out.println("<img src='affiche?id="+film.id+"'>");
         out.println("<ul>");
         out.println("</ul>");
         out.println("</body>");
