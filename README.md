@@ -9,7 +9,7 @@ l'affiche du film dont l'identifiant est **n**
 
 ### Travaux pratiques
 
-###### Créer une servlet qui affiche la liste des tritres de films
+###### Créer une servlet qui affiche la liste des titres de films
 * La liste devra être triée par ordre alphabétique croissant,
 * chaque titre est un lien vers le détail du film
 * Paramétrer la servlet pour afficher les films par :
