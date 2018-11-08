@@ -1,4 +1,4 @@
-package fr.laerce.cinema;
+package fr.iat.cinema;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -7,12 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by fred on 03/02/2016.
+ * @author student : IAmTerror
  */
 
 public class Recherche extends HttpServlet {
@@ -40,9 +38,10 @@ public class Recherche extends HttpServlet {
             int filmId = film.id;
             String filmTitre = film.titre;
 
+            // TODO : la recherche ne fonctionne pas lorsqu'il y a des accents dans les noms des films
             if (filmTitre.toLowerCase().contains(titre.toLowerCase())) {
                 out.println("<li>");
-                out.println("<a href=\"detail?id="+filmId+"\">"+film.titre+" ("+film.note+")</a>");
+                out.println("<a href=\"detail?id=" + filmId + "\">" + film.titre + " (" + film.note + ")</a>");
                 out.println("</li>");
             }
         }

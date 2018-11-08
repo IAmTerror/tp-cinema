@@ -1,4 +1,4 @@
-package fr.laerce.cinema;
+package fr.iat.cinema;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +10,7 @@ import java.util.Comparator;
 
 /**
  * Created by fred on 03/02/2016.
+ * @author student : IAmTerror
  */
 
 public class Liste extends HttpServlet {
@@ -60,12 +61,10 @@ public class Liste extends HttpServlet {
         }
 
 
-
-
         for (Film film : fd.lesFilms) {
             int filmId = film.id;
             out.println("<li>");
-            out.println("<a href=\"detail?id="+filmId+"\">"+film.titre+" ("+film.note+")</a>");
+            out.println("<a href=\"detail?id=" + filmId + "\">" + film.titre + " (" + film.note + ")</a>");
             out.println("</li>");
         }
         out.println("</ul>");

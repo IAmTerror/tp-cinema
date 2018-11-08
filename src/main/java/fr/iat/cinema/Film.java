@@ -1,4 +1,4 @@
-package fr.laerce.cinema;
+package fr.iat.cinema;
 
 public class Film {
 

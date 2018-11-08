@@ -1,8 +1,7 @@
-package fr.laerce.cinema;
+package fr.iat.cinema;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +12,7 @@ import java.io.OutputStream;
 
 /**
  * Created by fred on 03/02/2016.
+ * @author student : IAmTerror
  */
 
 public class Affiche extends HttpServlet {

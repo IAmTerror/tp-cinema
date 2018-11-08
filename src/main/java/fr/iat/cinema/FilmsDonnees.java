@@ -1,10 +1,11 @@
-package fr.laerce.cinema;
+package fr.iat.cinema;
 
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by fred on 03/02/2016.
+ * @author student : IAmTerror
  */
 public class FilmsDonnees {
     List<Film> lesFilms;

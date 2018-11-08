@@ -6,22 +6,22 @@
     <display-name>Archetype Created Web Application</display-name>
     <servlet>
         <servlet-name>affiche</servlet-name>
-        <servlet-class>fr.laerce.cinema.Affiche</servlet-class>
+        <servlet-class>fr.iat.cinema.Affiche</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>liste</servlet-name>
-        <servlet-class>fr.laerce.cinema.Liste</servlet-class>
+        <servlet-class>fr.iat.cinema.Liste</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>detail</servlet-name>
-        <servlet-class>fr.laerce.cinema.Detail</servlet-class>
+        <servlet-class>fr.iat.cinema.Detail</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>recherche</servlet-name>
-        <servlet-class>fr.laerce.cinema.Recherche</servlet-class>
+        <servlet-class>fr.iat.cinema.Recherche</servlet-class>
     </servlet>
 
     <servlet-mapping>
