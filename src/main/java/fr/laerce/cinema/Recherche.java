@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -39,8 +40,7 @@ public class Recherche extends HttpServlet {
             int filmId = film.id;
             String filmTitre = film.titre;
 
-            //http://localhost:8080/recherche?titre=La jurée
-            if (titre.equals(filmTitre)) {
+            if (filmTitre.toLowerCase().contains(titre.toLowerCase())) {
                 out.println("<li>");
                 out.println("<a href=\"detail?id="+filmId+"\">"+film.titre+" ("+film.note+")</a>");
                 out.println("</li>");
