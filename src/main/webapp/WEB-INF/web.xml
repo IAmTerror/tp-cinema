@@ -4,6 +4,16 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+
+    <!-- This is a context init parameter -->
+    <!-- Configuration du chemin ou se trouve le dossier qui contient...
+     ... les images de l'application (les affiches de film) -->
+    <!-- Permet de gérer les images dans un dossier externe à l'application -->
+    <context-param>
+        <param-name>datasPath</param-name>
+        <param-value>C:\Users\cyril\OUTER HEAVEN\CDA\varni\tp_cinema\sources\affiches\</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>affiche</servlet-name>
         <servlet-class>fr.iat.cinema.Affiche</servlet-class>
