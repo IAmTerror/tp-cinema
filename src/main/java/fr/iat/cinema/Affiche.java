@@ -12,6 +12,7 @@ import java.io.OutputStream;
 
 /**
  * Created by fred on 03/02/2016.
+ *
  * @author student : IAmTerror
  */
 
@@ -38,7 +39,7 @@ public class Affiche extends HttpServlet {
 
         response.setContentType(mime);
         File file = new File(filename);
-        // Longeur de la réponse
+        // Longueur de la réponse
         response.setContentLength((int) file.length());
 
         FileInputStream in = new FileInputStream(file);

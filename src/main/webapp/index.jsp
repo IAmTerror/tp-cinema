@@ -21,5 +21,7 @@
         <button type="submit">Effectuer une recherche</button>
     </div>
 </form>
+
+<p><a href="historique">Historique de la session utilisateur</a></p>
 </body>
 </html>

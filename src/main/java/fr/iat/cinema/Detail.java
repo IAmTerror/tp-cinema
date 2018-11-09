@@ -7,13 +7,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by fred on 03/02/2016.
+ *
  * @author student : IAmTerror
  */
 
 public class Detail extends HttpServlet {
+
+    List<Film> filmsConsultesSession;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -21,11 +26,20 @@ public class Detail extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        HttpSession session = request.getSession();
-        
+        HttpSession session = request.getSession(true);
+
+        filmsConsultesSession = (List<Film>) session.getAttribute("listeFilmsConsultes");
+
+        if (filmsConsultesSession == null) {
+            filmsConsultesSession = new ArrayList<Film>();
+            session.setAttribute("listeFilmsConsultes", filmsConsultesSession);
+        }
+
         Integer id = Integer.parseInt(request.getParameter("id"));
         FilmsDonnees fd = new FilmsDonnees();
         Film film = fd.getById(id);
+
+        filmsConsultesSession.add(film);
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -39,7 +53,7 @@ public class Detail extends HttpServlet {
         out.println("<a>Nom du film : " + film.titre + "</a>");
         out.println("<br />");
         out.println("<br />");
-        out.println("<a>Nom du film : " + film.note + "</a>");
+        out.println("<a>Note du film : " + film.note + "</a>");
         out.println("<br />");
         out.println("<br />");
         out.println("<img src='affiche?id=" + film.id + "'>");

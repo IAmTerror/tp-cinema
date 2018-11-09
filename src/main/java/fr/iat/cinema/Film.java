@@ -14,5 +14,8 @@ public class Film {
         this.note = note;
     }
 
-
+//    @Override
+//    public boolean equals(Object obj) {
+//        return ((Film)obj).id==this.id;
+//    }
 }
