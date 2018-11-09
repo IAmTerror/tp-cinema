@@ -39,11 +39,10 @@ public class Liste extends HttpServlet {
 
         /* sort alphabétique ascendant ou descendant **/
         // avec l'interface Comparator
-        if (sort.equals("_name_asc")) {
+        if (sort.equals("name_asc")) {
             // avec l'interface Comparator
 //            Collections.sort(fd.lesFilms, new FilmComparatorAsc());
             // avec une expression lambda (méthode plus légère)
-            // TODO : le tri ascendant ne fonctionne plus... pourquoi ?
             Collections.sort(fd.lesFilms,
                     (Film o1, Film o2) -> o1.titre.compareToIgnoreCase(o2.titre));
         } else if (sort.equals("name_desc")) {

@@ -38,8 +38,7 @@ public class Recherche extends HttpServlet {
 
             int filmId = film.id;
             String filmTitre = film.titre;
-
-            // TODO : la recherche ne fonctionne pas lorsqu'il y a des accents dans les noms des films
+            
             if (filmTitre.toLowerCase().contains(titre.toLowerCase())) {
                 out.println("<li>");
                 out.println("<a href=\"detail?id=" + filmId + "\">" + film.titre + " (" + film.note + ")</a>");
