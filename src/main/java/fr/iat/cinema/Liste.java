@@ -37,16 +37,11 @@ public class Liste extends HttpServlet {
         FilmsDonnees fd = new FilmsDonnees();
 
         // pour les besoins de la vue
-        request.setAttribute ("films", fd.lesFilms);
-
-        // délégation à la vue
-        String jspview = "liste.jsp";
-        getServletConfig().getServletContext()
-                .getRequestDispatcher("/WEB-INF/jsp/"+jspview).forward(request, response);
+        request.setAttribute("films", fd.lesFilms);
 
         // doc : https://stackoverflow.com/questions/2784514/sort-arraylist-of-custom-objects-by-property
         String sort = request.getParameter("sort");
-
+        
         /* sort alphabétique ascendant ou descendant **/
         // avec l'interface Comparator
         if (sort.equals("name_asc")) {
@@ -71,17 +66,22 @@ public class Liste extends HttpServlet {
         }
 
 
-        for (Film film : fd.lesFilms) {
-            int filmId = film.id;
+//        for (Film film : fd.lesFilms) {
+//            int filmId = film.id;
 //            out.println("<li>");
 //            out.println("<a href=\"detail?id=" + filmId + "\">" + film.titre + " (" + film.note + ")</a>");
 //            out.println("</li>");
-        }
+//        }
 
 
 //        out.println("</ul>");
 //        out.println("</body>");
 //        out.println("</html>");
+
+        // délégation à la vue
+        String jspview = "liste.jsp";
+        getServletConfig().getServletContext()
+                .getRequestDispatcher("/WEB-INF/jsp/" + jspview).forward(request, response);
 
 
     }

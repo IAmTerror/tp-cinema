@@ -42,12 +42,7 @@ public class Detail extends HttpServlet {
         filmsConsultesSession.add(film);
 
         // pour les besoins de la vue
-        request.setAttribute ("film", film);
-
-        // délégation à la vue
-        String jspview = "detail.jsp";
-        getServletConfig().getServletContext()
-                .getRequestDispatcher("/WEB-INF/jsp/"+jspview).forward(request, response);
+        request.setAttribute("film", film);
 
 //        response.setContentType("text/html");
 //        PrintWriter out = response.getWriter();
@@ -69,5 +64,10 @@ public class Detail extends HttpServlet {
 //        out.println("</ul>");
 //        out.println("</body>");
 //        out.println("</html>");
+
+        // délégation à la vue
+        String jspview = "detail.jsp";
+        getServletConfig().getServletContext()
+                .getRequestDispatcher("/WEB-INF/jsp/" + jspview).forward(request, response);
     }
 }

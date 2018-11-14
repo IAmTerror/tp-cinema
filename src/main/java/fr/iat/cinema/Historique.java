@@ -39,20 +39,20 @@ public class Historique extends HttpServlet {
         List<Film> filmsVus = (List<Film>) session.getAttribute("listeFilmsConsultes");
 
         // pour les besoins de la vue
-        request.setAttribute ("films", filmsVus);
+        request.setAttribute("films", filmsVus);
 
-        // délégation à la vue
-        String jspview = "historique.jsp";
-        getServletConfig().getServletContext()
-                .getRequestDispatcher("/WEB-INF/jsp/"+jspview).forward(request, response);
-
-        for (Film film : filmsVus) {
+//        for (Film film : filmsVus) {
 //            out.println("<li>" + film.titre + " (" + film.note + ")</li>");
-
-        }
+//
+//        }
 
 //        out.println("</ul>");
 //        out.println("</body>");
 //        out.println("</html>");
+
+        // délégation à la vue
+        String jspview = "historique.jsp";
+        getServletConfig().getServletContext()
+                .getRequestDispatcher("/WEB-INF/jsp/" + jspview).forward(request, response);
     }
 }
