@@ -23,28 +23,36 @@ public class Historique extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Liste des films</title>");
-        out.println("<head>");
-        out.println("<body>");
-        out.println("<h1>Les films : </h1>");
-        out.println("<ul>");
+//        response.setContentType("text/html");
+//        PrintWriter out = response.getWriter();
+//        out.println("<!DOCTYPE html>");
+//        out.println("<html>");
+//        out.println("<head>");
+//        out.println("<title>Liste des films</title>");
+//        out.println("<head>");
+//        out.println("<body>");
+//        out.println("<h1>Les films : </h1>");
+//        out.println("<ul>");
 
 
         HttpSession session = request.getSession();
         List<Film> filmsVus = (List<Film>) session.getAttribute("listeFilmsConsultes");
 
+        // pour les besoins de la vue
+        request.setAttribute ("films", filmsVus);
+
+        // délégation à la vue
+        String jspview = "historique.jsp";
+        getServletConfig().getServletContext()
+                .getRequestDispatcher("/WEB-INF/jsp/"+jspview).forward(request, response);
+
         for (Film film : filmsVus) {
-            out.println("<li>" + film.titre + " (" + film.note + ")</li>");
+//            out.println("<li>" + film.titre + " (" + film.note + ")</li>");
 
         }
 
-        out.println("</ul>");
-        out.println("</body>");
-        out.println("</html>");
+//        out.println("</ul>");
+//        out.println("</body>");
+//        out.println("</html>");
     }
 }

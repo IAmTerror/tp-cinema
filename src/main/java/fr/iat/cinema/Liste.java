@@ -23,16 +23,16 @@ public class Liste extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Liste des films</title>");
-        out.println("<head>");
-        out.println("<body>");
-        out.println("<h1>Les films : </h1>");
-        out.println("<ul>");
+//        response.setContentType("text/html");
+//        PrintWriter out = response.getWriter();
+//        out.println("<!DOCTYPE html>");
+//        out.println("<html>");
+//        out.println("<head>");
+//        out.println("<title>Liste des films</title>");
+//        out.println("<head>");
+//        out.println("<body>");
+//        out.println("<h1>Les films : </h1>");
+//        out.println("<ul>");
 
         FilmsDonnees fd = new FilmsDonnees();
 
@@ -79,9 +79,9 @@ public class Liste extends HttpServlet {
         }
 
 
-        out.println("</ul>");
-        out.println("</body>");
-        out.println("</html>");
+//        out.println("</ul>");
+//        out.println("</body>");
+//        out.println("</html>");
 
 
     }
