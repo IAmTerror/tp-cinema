@@ -41,25 +41,33 @@ public class Detail extends HttpServlet {
 
         filmsConsultesSession.add(film);
 
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Detail du film sélectionné</title>");
-        out.println("<head>");
-        out.println("<body>");
-        out.println("<h1>Film sélectionné :</h1>");
-        out.println("<a>Nom du film : " + film.titre + "</a>");
-        out.println("<br />");
-        out.println("<br />");
-        out.println("<a>Note du film : " + film.note + "</a>");
-        out.println("<br />");
-        out.println("<br />");
-        out.println("<img src='affiche?id=" + film.id + "'>");
-        out.println("<ul>");
-        out.println("</ul>");
-        out.println("</body>");
-        out.println("</html>");
+        // pour les besoins de la vue
+        request.setAttribute ("film", film);
+
+        // délégation à la vue
+        String jspview = "detail.jsp";
+        getServletConfig().getServletContext()
+                .getRequestDispatcher("/WEB-INF/jsp/"+jspview).forward(request, response);
+
+//        response.setContentType("text/html");
+//        PrintWriter out = response.getWriter();
+//        out.println("<!DOCTYPE html>");
+//        out.println("<html>");
+//        out.println("<head>");
+//        out.println("<title>Detail du film sélectionné</title>");
+//        out.println("<head>");
+//        out.println("<body>");
+//        out.println("<h1>Film sélectionné :</h1>");
+//        out.println("<a>Nom du film : " + film.titre + "</a>");
+//        out.println("<br />");
+//        out.println("<br />");
+//        out.println("<a>Note du film : " + film.note + "</a>");
+//        out.println("<br />");
+//        out.println("<br />");
+//        out.println("<img src='affiche?id=" + film.id + "'>");
+//        out.println("<ul>");
+//        out.println("</ul>");
+//        out.println("</body>");
+//        out.println("</html>");
     }
 }
