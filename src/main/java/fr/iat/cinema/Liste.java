@@ -5,8 +5,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created by fred on 03/02/2016.
@@ -33,6 +35,14 @@ public class Liste extends HttpServlet {
         out.println("<ul>");
 
         FilmsDonnees fd = new FilmsDonnees();
+
+        // pour les besoins de la vue
+        request.setAttribute ("films", fd.lesFilms);
+
+        // délégation à la vue
+        String jspview = "liste.jsp";
+        getServletConfig().getServletContext()
+                .getRequestDispatcher("/WEB-INF/jsp/"+jspview).forward(request, response);
 
         // doc : https://stackoverflow.com/questions/2784514/sort-arraylist-of-custom-objects-by-property
         String sort = request.getParameter("sort");
@@ -63,10 +73,12 @@ public class Liste extends HttpServlet {
 
         for (Film film : fd.lesFilms) {
             int filmId = film.id;
-            out.println("<li>");
-            out.println("<a href=\"detail?id=" + filmId + "\">" + film.titre + " (" + film.note + ")</a>");
-            out.println("</li>");
+//            out.println("<li>");
+//            out.println("<a href=\"detail?id=" + filmId + "\">" + film.titre + " (" + film.note + ")</a>");
+//            out.println("</li>");
         }
+
+
         out.println("</ul>");
         out.println("</body>");
         out.println("</html>");

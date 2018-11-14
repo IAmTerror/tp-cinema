@@ -13,6 +13,11 @@
     <title>Liste des films</title>
 </head>
 <body>
+<h1>Les films : </h1>
+<c:forEach items="${films}" var="film">
+    <a href=\detail?id=${film.id}>${film.titre} ${film.note}</a>
+    <br />
+</c:forEach>
 
 </body>
 </html>
