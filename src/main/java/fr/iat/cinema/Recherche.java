@@ -38,7 +38,7 @@ public class Recherche extends HttpServlet {
 
             int filmId = film.id;
             String filmTitre = film.titre;
-            
+
             if (filmTitre.toLowerCase().contains(titre.toLowerCase())) {
                 out.println("<li>");
                 out.println("<a href=\"detail?id=" + filmId + "\">" + film.titre + " (" + film.note + ")</a>");

@@ -64,3 +64,7 @@ Pour récupérer une affiche ou le détail d'un film, plutôt que d'utiliser un 
 ou
 
 **GET** `http://localhost:8080/detail/5` pour obtenir le détail du film 5
+
+###### Refactoring
+
+Refondre le code afin de déplacer les écritures de code HTML des servlets vers des pages JSP.
