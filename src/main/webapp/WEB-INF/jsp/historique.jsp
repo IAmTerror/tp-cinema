@@ -13,6 +13,7 @@
     <title>Historique</title>
 </head>
 <body>
+<h1>Historique des films consultés : </h1>
 <c:forEach items="${films}" var="film">
     <a href=\detail?id=${film.id}>${film.titre} (${film.note})</a>
     <br />
